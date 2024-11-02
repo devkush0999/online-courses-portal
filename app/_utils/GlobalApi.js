@@ -4,8 +4,8 @@ import { gql, request } from 'graphql-request'
 
 const getAllCourseList=async()=>{
     const query =gql`
-    query MyQuery {
-  courseLists {
+   query MyQuery {
+  courseLists(first: 25, orderBy: id_ASC) {
     author
     name
     id
@@ -17,9 +17,16 @@ const getAllCourseList=async()=>{
     chapter {
       ... on Chapter {
         id
+        name
+        video {
+          url
+        }
       }
     }
+    tag
+    sourceCode
     free
+    totalChapters
   }
 }
   `

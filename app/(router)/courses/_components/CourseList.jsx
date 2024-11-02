@@ -38,13 +38,23 @@ function CourseList() {
         </Select>
       </div>
       {/* display course List */}
-      <div className="">
-        {courseList.map((item, index) => (
-          <div key={index} className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-            <CourseItem course={item} />
-            {/* <CourseItem course={item} /> */}
-          </div>
-        ))}
+      <div className="grid grid-cols-2 lg:grid-cols-3 gap-2">
+        {courseList?.length > 0
+          ? courseList.map((item, index) => (
+              <div
+                key={index}
+                className="justify-items-center w-full h-[240px]"
+              >
+                <CourseItem course={item} />
+                {/* <CourseItem course={item} /> */}
+              </div>
+            ))
+          : [1, 2, 3, 4, 5, 6, 7].map((item, index) => (
+              <div
+                key={index}
+                className="w-full h-[240px] rounded-xl bg-slate-200 animate-pulse"
+              ></div>
+            ))}
       </div>
     </div>
   );
