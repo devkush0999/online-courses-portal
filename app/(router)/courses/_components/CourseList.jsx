@@ -34,9 +34,6 @@ function CourseList() {
             <SelectItem value="light">All</SelectItem>
             <SelectItem value="dark">Paid</SelectItem>
             <SelectItem value="system">Free</SelectItem>
-            <SelectItem value="light">bahut mahngaa</SelectItem>
-            <SelectItem value="dark">aukat se bahar</SelectItem>
-            <SelectItem value="system">chl nikal</SelectItem>
           </SelectContent>
         </Select>
       </div>

@@ -17,7 +17,7 @@ export default function Courses() {
         {/* <img src='https://i0.wp.com/picjumbo.com/wp-content/uploads/gorgeous-flamingo-free-image.jpeg?w=1024&quality=50'  alt="kii" width={150} height={150} className='rounded-full'/> */}
       </div>
       {/* right section */}
-      <div className="border m-1 border-black col-span-1">
+      <div className="border p-5 bg-white rounded-xl">
         <SideBanners />
       </div>
     </div>

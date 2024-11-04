@@ -3,7 +3,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 function SideBanners() {
-  const [sideBannerList, setSideBannerList] = useState();
+  const [sideBannerList, setSideBannerList] = useState([]);
   useEffect(() => {
     getSideBanners();
   }, []);
@@ -11,16 +11,24 @@ function SideBanners() {
   const getSideBanners = () => {
     GlobalApi.getSideBanner().then((resp) => {
       console.log(resp);
-      setSideBannerList(resp.sideBanners);
+      setSideBannerList(resp?.sideBanners);
     });
   };
   return (
-    <div>
+    <div className="border-2">
       {sideBannerList.map((item, index) => {
         <div key={index}>
-          <Image src={item.banner.url} width={100} height={100} alt="banner" />
+          <Image
+            src={item.banner.url}
+            width={500}
+            height={300}
+            alt="banner"
+            className="rounded-xl cursor-pointer"
+            onClick={() => window.open(item?.url)}
+          />
         </div>;
       })}
+      <p>hii</p>
     </div>
   );
 }
